@@ -3,8 +3,18 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import smtplib
 from email.mime.text import MIMEText
+from fastapi.middleware.cors import CORSMiddleware  # Import the middleware
 
 app = FastAPI()
+
+# Configure CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://samantha-who.github.io"],  # Replace with your frontend domain
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all methods (GET, POST, PUT, DELETE, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
 
 class ContactForm(BaseModel):
     name: str
