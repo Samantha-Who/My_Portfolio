@@ -16,7 +16,7 @@ body {
 
 /* Header with Cute Halloween Background */
 header {
-    background: url('images/SpookyCute.png') repeat center/cover;
+    background: url('SpookyCute.png') repeat center/cover;
     color: white;
     text-align: center;
     padding: 40px 20px;
