@@ -22,7 +22,7 @@ async def send_email(form_data: ContactForm):
 
         # Send the email (using SMTP)
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
-            server.login('your_email@gmail.com', 'your_password')  # Replace with your credentials
+            server.login('samantha.marian94@gmail.com', 'Iloveyou33!')  # Replace with your credentials
             server.send_message(msg)
 
         return JSONResponse(content={"message": "Email sent successfully!"})
