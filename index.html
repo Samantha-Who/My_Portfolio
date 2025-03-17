@@ -68,7 +68,9 @@
 </section>
 
 <script>
-    function submitForm() {
+    function submitForm(event) {
+        event.preventDefault(); // Prevent default form submission
+
         const form = document.getElementById('contactForm');
         const formData = {
             name: form.name.value,
@@ -85,8 +87,8 @@
         })
         .then(response => {
             if (response.ok) {
-                alert('Message Sent!');  // Display the "Message Sent!" alert
-                form.reset(); // Clear the form
+                alert('Message Sent!');
+                form.reset();
             } else {
                 alert('An error occurred. Please try again.');
             }
