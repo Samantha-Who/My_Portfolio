@@ -55,7 +55,8 @@
 <section id="contact">
     <h2>Contact Me</h2>
 
-    <form id="contactForm">  <label for="name">Name:</label>
+    <form id="contactForm">
+        <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
         <label for="email">Email:</label>
@@ -64,13 +65,15 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" required></textarea>
 
-        <button type="button" onclick="submitForm()">Send</button>  
+        <button type="button" onclick="submitForm(event)">Send</button>
     </form>
 </section>
 
 <script>
     function submitForm(event) {
-        event.preventDefault(); // Prevent default form submission
+        if (event) { // Check if event is defined
+            event.preventDefault();
+        }
 
         const form = document.getElementById('contactForm');
         const formData = {
