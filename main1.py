@@ -11,7 +11,7 @@ app = FastAPI()
 # Configure CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://samantha-who.github.io/My_Portfolio/", "http://127.0.0.1:5500", "http://localhost:5500"],  # Your frontend URLs
+    allow_origins=["https://samantha-who.github.io/", "http://127.0.0.1:5500", "http://localhost:5500"],  # Your frontend URLs
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],  # Allow OPTIONS for CORS preflight
     allow_headers=["*"],
