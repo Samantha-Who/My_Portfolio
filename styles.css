@@ -8,9 +8,6 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-}
-
-body {
     cursor: url('data:image/x-icon;base64,AAACAAEAICACAAAAAAAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAACAcHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABwAAAI+IAAHf3AAD//4AB///AA/f34Afj4/AP42P4AAIgAAwAAAAOAAAADgAAAA///////////////////////////////////////////////////////////////////////////////////////////////////////3////4////cHf//iAj//wAAf/4AAD/8CAgf+BwcD/AcnAf//d//8/////H////x////8='), auto;
 }
 
@@ -23,6 +20,7 @@ header {
     font-family: 'Patrick Hand', cursive;
     font-size: 26px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 /* Ensure text readability over the pattern */
@@ -51,12 +49,12 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* About, Projects, Contact Sections */
+/* Section Styling */
 #about, #favorites, #projects, #contact {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 18px;
@@ -70,7 +68,9 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #ff7518; /* Pumpkin Orange */
+    text-shadow: 0px 0px 8px #ff7518;
+    transition: all 0.3s ease-in-out;
 }
 
 a:active {
@@ -81,17 +81,19 @@ a:active {
 form {
     display: flex;
     flex-direction: column;
+    gap: 10px; /* Adds spacing between fields */
 }
 
 input, textarea {
     width: 100%;
+    max-width: 500px; /* Responsive input field */
     padding: 10px;
-    margin: 5px 0;
     border: 2px solid #6a0dad;
     border-radius: 8px;
     font-family: 'Quicksand', sans-serif;
 }
 
+/* Buttons */
 button {
     background-color: #ad0d78;
     color: white;
@@ -101,10 +103,55 @@ button {
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #d219a1;
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 999;
+    background-color: #636060;
+    border: 1px solid #272626;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: white; /* Ensures text is visible */
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #2b2b2b;
+    color: white;
+}
+
+body.dark-mode a {
+    color: #ae18ff;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #444;
+    border-color: #555;
+    color: #fff;
+}
+
+/* Favorites Section */
+#favorites ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Orange Text */
+.orange-text {
+    color: orange;
+    font-weight: bold;
 }
 
 /* Footer */
@@ -115,64 +162,4 @@ footer {
     color: white;
     margin-top: 40px;
     font-family: 'Patrick Hand', cursive;
-}
-
-.orange-text {
-    color: orange;
-    font-weight: bold; /* Optional: Makes it stand out */
-}
-
-header {
-    position: relative; /* Important! */
-    /* Add other header styles here */
-}
-
-
-/* General button styling */
-#dark-mode-toggle {
-    position: absolute; /* Fix to viewport */
-    top: 10px;      /* Adjust as needed */
-    right: 10px;     /* Adjust as needed */
-    z-index: 999;    /* Ensure it's on top */
-    background-color: #636060; /* Light button background */
-    border: 1px solid #272626;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 4px; /* Optional: Rounded corners */
-}
-
-/* Dark mode styles */
-body.dark-mode {
-    background-color: #444040;
-    color: rgb(4, 4, 4);
-}
-
-.dark-mode a {
-    color: #ae18ff;
-}
-
-/* Optional: Button style in dark mode */
-body.dark-mode #dark-mode-toggle {
-    background-color: #333; /* Darker button background in dark mode */
-    border-color: #555;
-    color: #fff; /* White text in dark mode button */
-}
-
-a:hover {
-    color: #ff7518; /* Pumpkin Orange */
-    text-shadow: 0px 0px 5px #ff7518;
-    transition: 0.3s ease-in-out;
-}
-
-#favorites ul {
-    list-style: none;
-    padding: 0;
-}
-
-
-form input[type="text"],
-form input[type="email"],
-form textarea {
-    width: 400px; /* Adjust this value to your desired width */
-    box-sizing: border-box; /* Ensures padding and border don't increase the overall width */
 }
