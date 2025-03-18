@@ -82,7 +82,28 @@ document.getElementById("trick-or-treat").addEventListener("click", function() {
     document.getElementById("surprise-message").innerText = randomMessage;
 });
     </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("dark-mode-toggle");
+    const body = document.body;
 
+    // Check if Dark Mode was previously enabled
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-mode");
+    }
+
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+
+        // Save the user's preference
+        if (body.classList.contains("dark-mode")) {
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
+});
+</script>
 
     <!-- Footer -->
     <footer>
